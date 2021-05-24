@@ -1,0 +1,116 @@
+/ This is the grammar definition for QAZ
+
+/ Start nonterminal to tell the parser where to start
+Start: program
+
+/ An program exists of multiple statements
+program
+	stmts
+
+/ A set of statements is nothing
+/ or multiple "stmt" nonterminals
+stmts
+	stmt stmts
+	EMPTY
+
+/ A stmt is either:
+/   - Variable declaration
+/   - Function declaration
+/   - Function call
+/   - Assignment
+Group: stmt
+	declaration
+	global_call
+	assignment
+
+declaration
+	variable_declaration
+	FUNCTION function_declaration
+
+global_call
+	call SEMICOLON
+
+Group: call
+	function_call
+	variable_call
+
+function_call
+	function_name LEFT_PARENTHESIS function_arguments RIGHT_PARENTHESIS
+
+Group: variable_call
+	VARNAME
+
+assignment
+	variable_assignment SEMICOLON
+
+expression
+	expression MULTIPLY expression
+	expression DIVIDE expression
+	expression MINUS expression
+	expression PLUS expression
+	LEFT_PARENTHESIS expression RIGHT_PARENTHESIS
+	value
+	call
+	
+variable_declaration
+	type variable EQUAL expression SEMICOLON
+	
+function_declaration
+	return_type function_name LEFT_PARENTHESIS function_parameters RIGHT_PARENTHESIS function_block
+
+variable_assignment
+	variable EQUAL expression SEMICOLON
+
+return_assignment
+	RETURN EQUAL expression SEMICOLON
+
+function_parameters_at_least_one
+	function_parameter COMMA function_parameters_at_least_one
+	function_parameter
+
+function_parameters
+	function_parameters_at_least_one
+	EMPTY
+	
+function_argument_at_least_one	
+	function_argument COMMA function_argument_at_least_one
+	function_argument
+	
+function_arguments
+	function_argument_at_least_one
+	EMPTY
+
+/ A function block is a set of statements, ending with a return assignment
+function_block
+	LEFT_BRACKET stmts return_assignment RIGHT_BRACKET
+	
+function_parameter
+	type VARNAME
+
+Group: function_argument
+	call
+	value
+
+Group: function_name
+	VARNAME
+
+Group: return_type
+	type	
+
+Group: variable
+	VARNAME
+	
+/ You can use integers, strings, or custom defined types.
+/ Custom types will later be supported, and require an update in our CFG
+Group: type
+	INTEGER_TYPE
+	STRING_TYPE
+	VARNAME
+
+Group: value
+	NUMBER
+	DECIMAL
+
+/ DLDL files traditionally end with a single SLASH at the end
+/ This is optional if you are using DLDL v2 or later
+/

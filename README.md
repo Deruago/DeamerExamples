@@ -1,8 +1,8 @@
 # Deamer Project Example repository
 
-This repository serves as example repo for the Deamer project.
+This repository serves as example repo for the [Deamer project](https://github.com/Deruago/theDeamerProject).
 
-This repository will contain examples ranging from:
+This repository will contain examples and tutorials ranging from:
 
 - Simple small examples
 - Tutorials
@@ -10,9 +10,19 @@ This repository will contain examples ranging from:
 
 ## Beginners
 
-For beginners it is suggested to completely install the Deamer project, and start by using DLDL.
+For beginners it is suggested to completely install the [Deamer project](https://github.com/Deruago/theDeamerProject) (at least [Deamer](https://github.com/Deruago/theDeamerProject), [DLDL](https://github.com/Deruago/DLDL), and [Deamer External](https://github.com/Deruago/DeamerExternal)), and start by using DLDL.
 
-DLDL is a tool to implement definitions for Deamer CC. Aside from being a front-end for Deamer CC, it is also the main tool for starting and maintaining "Deamer" projects.
+DLDL is a tool to implement definitions for Deamer CC. Aside from being a front-end for Deamer CC, it is also the main tool for starting and maintaining language projects.
+
+DLDL is thus a great tool to start enjoying what the Deamer Project has to offer.
+
+### Tutorials
+
+There will be several tutorials available to start with. Currently the following tutorials can be used for beginners:
+
+| Tutorial:             | Description:                                                 | Progress:                |
+| --------------------- | ------------------------------------------------------------ | ------------------------ |
+| Creating a simple DSL | Explains how one can use the basics of DLDL, and how one can create simple AST listeners. | Is still being improved. |
 
 ## License
 
