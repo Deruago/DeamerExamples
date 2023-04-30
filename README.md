@@ -22,7 +22,7 @@ There will be several tutorials available to start with. Currently the following
 
 | Tutorial:             | Description:                                                 | Progress:                |
 | --------------------- | ------------------------------------------------------------ | ------------------------ |
-| Creating a simple DSL | Explains how one can use the basics of DLDL, and how one can create simple AST listeners. | Is still being improved. |
+| [Creating a simple DSL](https://github.com/Deruago/DeamerExamples/tree/master/DLDL/Tutorial/Creating%20a%20simple%20DSL) | Explains how one can use the basics of DLDL, and how one can create simple AST listeners. | Complete. |
 
 ## License
 
