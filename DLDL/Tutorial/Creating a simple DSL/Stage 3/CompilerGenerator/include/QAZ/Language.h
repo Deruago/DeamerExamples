@@ -18,29 +18,30 @@ namespace QAZ
 	 *	\note This is auto-generated via the DLDL definition.
 	 */
 	class Language : public ::deamer::language::generator::definition::Language<
-						 ::QAZ::Language , ::QAZ::Identity
-, ::QAZ::Generation
-, ::QAZ::Grammar
-, ::QAZ::Lexicon
->
-						 , public ::QAZ::Identity
-, public ::QAZ::Generation
-, public ::QAZ::Grammar
-, public ::QAZ::Lexicon
+							  ::QAZ::Language 
+							, ::QAZ::Identity
+							, ::QAZ::Generation
+							, ::QAZ::Grammar
+							, ::QAZ::Lexicon
+							>
+							, public ::QAZ::Identity
+							, public ::QAZ::Generation
+							, public ::QAZ::Grammar
+							, public ::QAZ::Lexicon
 
 	{
 	public:
 		Language() : ::deamer::language::generator::definition::Language<
-						 ::QAZ::Language , ::QAZ::Identity
-, ::QAZ::Generation
-, ::QAZ::Grammar
-, ::QAZ::Lexicon
->()
-		, ::QAZ::Identity::Identity(this)
-, ::QAZ::Generation::Generation(this)
-, ::QAZ::Grammar::Grammar(this)
-, ::QAZ::Lexicon::Lexicon(this)
-
+							  ::QAZ::Language 
+							, ::QAZ::Identity
+							, ::QAZ::Generation
+							, ::QAZ::Grammar
+							, ::QAZ::Lexicon
+							>()
+							, ::QAZ::Identity::Identity(this)
+							, ::QAZ::Generation::Generation(this)
+							, ::QAZ::Grammar::Grammar(this)
+							, ::QAZ::Lexicon::Lexicon(this)
 		{
 		}
 		~Language() override = default;

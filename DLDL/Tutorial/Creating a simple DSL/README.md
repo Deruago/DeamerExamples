@@ -206,39 +206,6 @@ EQEQ EQ
 EQEQ EQEQ
 ```
 
-### Common beginner errors related to terminal processing
-
-Recall the previous example about the EQEQ and EQ lexer. What if we changed the positions of these definitions?
-
-Well what we get is that the lexer given a sequence of equal signs will always prefer EQ. As a single '=' already satisfies the terminal, we won't check terminals that occur later.
-
-```DLDL
-Terminal: EQ   [=]
-Terminal: EQEQ [=][=]
-```
-
-
-
-```txt
-=
-==
-===
-====
-```
-
-
-
-```txt
-EQ
-EQ EQ
-EQ EQ EQ
-EQ EQ EQ EQ
-```
-
-To prevent this it is often enough to recognize that 2 regexes might overlap, and then changing the order accordingly. 
-
-In later versions DLDL can detect this and give recommendations on which change to apply.
-
 ### Skipping sequences
 
 It often happens that you want to skip sequences, as often allowing some sequences to be converted to tokens adds overhead to the grammar.
@@ -509,6 +476,12 @@ DLDL -g -ac -ar
 ```
 
 This will automatically generate the C++ project, compile it, and run it at the right spot.
+
+```bash
+DLDL -regen
+```
+
+The regeneration argument takes in all the passive arguments stored in the .deamer directory, and re-generate the project. It can serve as a simpler alternative to the above argument combinations, when you do not want to be specific.
 
 ### What does this project contain?
 
